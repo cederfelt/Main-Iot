@@ -1,26 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 
 namespace MainIotApp
 {
     public class RegisterBackgroundTasks
     {
-        TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
-        private static readonly String TempLoggerName = "";
-        private static readonly String TempLoggerStartingPoint = "";
+        TimeTrigger _hourlyTrigger = new TimeTrigger(60, false);
+        private static readonly String TempLoggerName = "TempLogger";
+        private static readonly String TempTaskEntryPoint = "Temperature_Logger.StartupTask";
 
-
-
-        public async void RegisterTasks()
+        public async Task<List<BackgroundTask>> RegisterTasks()
         {
+            List<BackgroundTask> taskList = new List<BackgroundTask>();
             await BackgroundExecutionManager.RequestAccessAsync();
-
-
+            taskList.Add(RegisterTemperaturLogger());
+            return taskList;
         }
 
         public BackgroundTask RegisterTemperaturLogger()
         {
-            BackgroundTaskRegistration task = RegisterBackgroundTask("", "", hourlyTrigger, null);
+            BackgroundTaskRegistration task = RegisterBackgroundTask(TempTaskEntryPoint, TempLoggerName, _hourlyTrigger, null);
             return new BackgroundTask(task);
         }
 

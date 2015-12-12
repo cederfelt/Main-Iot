@@ -7,33 +7,33 @@ namespace MainIotApp
     {
         public string Name { get; set; }
         public Guid Id { get; set; }
-        private BackgroundTaskRegistration TheTask;
+        private BackgroundTaskRegistration _theTask;
 
         public BackgroundTask(BackgroundTaskRegistration task)
         {
             Name = task.Name;
             Id = task.TaskId;
-            TheTask = task;
+            _theTask = task;
         }
 
         public void RegisterEventHandler()
         {
-            TheTask.Completed += TheTask_Completed;
+            _theTask.Completed += TheTask_Completed;
         }
 
         public void RegisterProgressHandler()
         {
-            TheTask.Progress += TheTask_Progress;
+            _theTask.Progress += TheTask_Progress;
         }
 
         public void RegisterHandler(BackgroundTaskProgressEventHandler daFunc)
         {
-            TheTask.Progress += daFunc;
+            _theTask.Progress += daFunc;
         }
 
         public void RegisterHandler(BackgroundTaskCompletedEventHandler daFunc)
         {
-            TheTask.Completed += daFunc;
+            _theTask.Completed += daFunc;
         }
 
         private void TheTask_Progress(BackgroundTaskRegistration sender, BackgroundTaskProgressEventArgs args)

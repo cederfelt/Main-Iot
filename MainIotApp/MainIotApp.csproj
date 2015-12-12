@@ -129,6 +129,12 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Temperature-Logger-Iot\Temperature-Logger\Temperature-Logger.csproj">
+      <Project>{47587c01-addb-4244-b62c-92fb74e581a4}</Project>
+      <Name>Temperature-Logger</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

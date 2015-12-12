@@ -1,0 +1,3 @@
+[submodule "Temperature-Logger-Iot"]
+	path = Temperature-Logger-Iot
+	url = https://github.com/chaudi/Temperature-Logger-Iot.git

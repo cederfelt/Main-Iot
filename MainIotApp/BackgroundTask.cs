@@ -7,7 +7,7 @@ namespace MainIotApp
     {
         public string Name { get; set; }
         public Guid Id { get; set; }
-        private BackgroundTaskRegistration _theTask;
+        private readonly BackgroundTaskRegistration _theTask;
 
         public BackgroundTask(BackgroundTaskRegistration task)
         {

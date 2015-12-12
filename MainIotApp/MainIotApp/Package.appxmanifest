@@ -8,14 +8,14 @@
 
   <Identity
     Name="fb90b581-92bd-4a74-aa91-3348c39c7c16"
-    Publisher="CN=Ludvig"
+    Publisher="CN=Chaudi"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="fb90b581-92bd-4a74-aa91-3348c39c7c16" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>MainIotApp</DisplayName>
-    <PublisherDisplayName>Ludvig</PublisherDisplayName>
+    <PublisherDisplayName>Chaudi</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
